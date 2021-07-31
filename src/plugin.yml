@@ -1,0 +1,4 @@
+main: me.ptich.plugins.main
+name: pluginPrac
+version: 1.0.0
+api-version: 1.17
