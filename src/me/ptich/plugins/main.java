@@ -10,6 +10,7 @@ public class main extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new randomSpawn(),this);
 
         getServer().getPluginManager().registerEvents(new randomEncounter(), this);
+        //이렇게 수정하면?
     }
 
     @Override
