@@ -16,14 +16,20 @@ public class randomSpawn implements Listener {
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
         Player player = e.getPlayer();
-        Random random = new Random();
 
-        int x = random.nextInt(maxX);
-        int z = random.nextInt(maxZ);
-        Location randomLocation = (Location) player.getWorld().getHighestBlockAt(x, z).getLocation();
-        randomLocation.add(0, 1, 0);
+        if (!player.hasPlayedBefore()) {
 
-        //player.teleport(randomLocation);
+            Random random = new Random();
+
+            int x = random.nextInt(maxX);
+            int z = random.nextInt(maxZ);
+            Location randomLocation = (Location) player.getWorld().getHighestBlockAt(x, z).getLocation();
+            randomLocation.add(0, 1, 0);
+
+            //player.teleport(randomLocation);
+
+        }
+
 
     }
 
