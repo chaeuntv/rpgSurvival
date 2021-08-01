@@ -5,6 +5,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.inventory.CraftItemEvent;
 import org.bukkit.event.player.PlayerFishEvent;
 
 import java.util.Random;
@@ -30,8 +31,6 @@ public class randomEncounter implements Listener {
                 e.setCancelled(false);
             }
 
-        } else {
-            e.setCancelled(false);
         }
 
     }
@@ -51,6 +50,19 @@ public class randomEncounter implements Listener {
             } else {
                 e.setCancelled(false);
             }
+
+        }
+
+    }
+
+    @EventHandler
+    public void onCraftItem(CraftItemEvent e) {
+
+        e.getWhoClicked().sendMessage("흠.");
+
+        if (e.getCurrentItem().getType().equals(Material.CAMPFIRE)) {
+
+            e.getWhoClicked().sendMessage("asdf");
 
         }
 
